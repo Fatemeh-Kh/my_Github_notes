@@ -1,0 +1,202 @@
+Git commands:
+...............................................
+pangrams:
+	- the quick brown fox jumps over the lazy dog
+	- The five boxing wizards jump quickly
+	- how quickly daft jumping zebras vex
+	- pack my box with five dozen liquor jugs
+	- Heavy boxes perform quick waltzes and jigs
+...............................................
+
+git bash is where we run all unix commands
+...............................................
+verion of git:
+	git --version
+
+clearing the git bash:
+	clear
+
+shows folders in the 
+	ls -la 
+
+................................................
+created the folder on the desktop called project
+then in the gi bash , cd to the project folder and then init to initializing this folder as a git repository
+
+	cd ~/Desktop/project
+	git init  //.git invisible folder will be created
+
+	git add [nameOfTheFile] // adds the file to the stage
+
+	git status // shows the status of files in the repository
+
+	git add . // adds all the files that made changes to; into the stage
+
+commit is make record of the state of folder and will be record in log
+
+	git commit -m "message:revision one "
+
+for the first time:
+	git config --global user.email "you@example.com"
+	git config --global user.name "your name"
+
+.............................................
+
+Undo:
+changes are not in the stage
+	git add. // adds changes to directry 
+	git checkout index.html // grabs the file from the stage; grabs the file from the previous version and overwrote the changes -- its like undo
+
+Unstaging:
+changes are in the stage:
+	git reset HEAD <file>...
+
+takes whatever was in the staging environment, and replacing in in working file environment
+
+added the v2 to stage. changed to v3html.then unstaging, then v2 deleted from stage and it was v3
+................................................
+
+	git log
+	git checkout [TheLongNumber]// takes it to that revesion
+
+................................................
+delete:
+	delete the file then git add
+	(for undoing: git checkout)
+	git rm [filename]
+...............................................
+super push to stage
+	git add -all // super push to stage
+...............................................
+
+Managing Log:
+	git log //seeing commits
+
+	git checkout [#numbers] //then says you are now in head...
+...............
+Branches:
+main branch=master
+* shows what branch we are in
+	git checkout master // goes to the master
+.......................................
+	git branch <new-branch-name> xyzabc //make branch to keep changes
+.......................................
+
+Controlling state with Branches:
+create a branch:
+	git branch [nameOfBranch]
+
+	git branch //shows branches
+
+	git checkout [branchName] //switches to that branch
+
+bring changes to master - should be on the master branch (git checkout master // goes to the master)
+	git merge [branchname]
+
+changing the branch name:
+	git branch -m [original name] [ne name]
+	-m : move
+
+removng branch
+	git branch -D [branchName]
+
+...............................................
+Some Points:
+
+	Which command do you use in order to see the record of all the commits that have been made in the project? 
+	>git log
+
+	To add all the files to the staging environment, you use _____.
+	>git add .
+
+	When deleting a file from the working directory, it is automatically deleted from staging.
+	>Wrong
+
+	Every time you make a commit, a log entry is created, and you can look at it by using the git log command.
+	>true
+
+	How do you create a new branch named "test"?
+	>git branch test
+...............................................
+
+creating repository+push/ pull
+
+...............................................
+...............................................
+
+"working with Github projects : "
+
+Analying a Gthub project structure:
+
+readme markdown files format:
+	http://daringfireball.net/projects/markdown/
+
+gitignore:
+	like: 
+	node_modules
+	.DS_store
+	builds/development/images/**
+	.tmp
+	gulpfile.js
+	package.json
+..............................................
+	pwd //gives the current directory
+
+	git clone [url of the repository]
+
+	git branch -a //shows all branches of the clone
+
+get one branch of project:
+	git checkout -b [the new local branch we want to create] origin/[original wanted branch]  
+
+so what this command did:
+ It checked out a branch from our remote server from GitHub, right this branch called 02_01, it made a new branch in our local project called 02_01, and it downloaded everything from GitHub and then automatically switched to that branch. 
+
+ ................................
+
+get all branches of project:
+	mkdir folerName
+	cd flderName
+	git clone --mirror [url] .git
+
+	ls //shows the .git invisible folder in that folder
+
+	git config --bool core.bare false
+	git reset --hard //grab everything from folder and makes folders and directories
+
+...............................................
+using github branch as template:
+
+	cd ~/Desktop
+	git clone -b [branch name] [git url repository] // just copy the start/template branch on the desktop
+ 	cd directoryNameOfProjectThatCloned
+	rm -dfr .git //get rid of .git and so its not a git project
+
+	so when its not a git project its a normal template
+
+	git init //now its a new repo
+	git log
+	git add .
+	git commit -m "first commit"
+...............................................
+
+some points:
+	The file that contains instructions on how to work with the project is _____.
+	README.md
+
+	After cloning a repository, what command do you use to run the automation for the project?
+	gulp
+
+	Which command clones the base_project branch from the following repository: https://github.com/myprojects/experiment_with_git
+	
+	git clone -b base_project https://github.com/myprojects/experiment_with_git.git
+
+
+
+
+
+
+
+
+
+
